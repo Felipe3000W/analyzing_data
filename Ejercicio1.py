@@ -25,11 +25,15 @@ X_train,X_test,y_train,y_test = train_test_split(iris_dataset['data'],iris_datas
 #Inspect Data  con Visualizaciones
 #CREAMOS un dataframe para la data de entrenamiento
 iris_dataframe_train =pd.DataFrame(X_train, columns=iris_dataset['feature_names'])
-
+iris_dataframe_test =pd.DataFrame(X_test, columns=iris_dataset['feature_names'])
 #print(iris_dataframe_train)
 
 # create a scatter matrix from the dataframe, color by y_train
-grr = pd.plotting.scatter_matrix(iris_dataframe_train, c=y_train, figsize=(15, 15), marker='o', 
+#grr = pd.plotting.scatter_matrix(iris_dataframe_train, c=y_train, figsize=(15, 15), marker='o', hist_kwds={'bins': 20}, s=60, alpha=.8, cmap=mglearn.cm3)
+#plt.show()
+
+# create a scatter matrix from the dataframe, color by y_train
+grrtest = pd.plotting.scatter_matrix(iris_dataframe_test, c=y_test, figsize=(15, 15), marker='o', 
 hist_kwds={'bins': 20}, s=60, alpha=.8, cmap=mglearn.cm3)
 plt.show()
 
